@@ -10,7 +10,6 @@ import java.util.*;
 public class HelloController {
 
     @FXML
-    static
     TextField inputText;
 
     @FXML
