@@ -3,8 +3,6 @@ package com.example.cryptographer;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-
-import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 
 public class HelloController {
@@ -18,26 +16,29 @@ public class HelloController {
     @FXML
     Button btn;
 
-    public void cryptoText() throws InvocationTargetException {
+    public void encodeText() {
 
-        //System.out.println("Введите текст для шифрования!");
-        //Scanner sc = new Scanner(System.in);
-        //String textForCrypto = sc.nextLine();
-        String textForCrypto = inputText.getText();
-        Map<String, String> cryptoDictionary = new HashMap<String, String>();
-        cryptoDictionary.put("Привет!", "aPhrase");
-        cryptoDictionary.put("Как дела?", "bPhrase");
-        cryptoDictionary.put("Что делаешь?", "cPhrase");
-        cryptoDictionary.put("Где ты?", "dPhrase");
-        cryptoDictionary.put("Когда будешь?", "ePhrase");
+        HashMap<String, String> dictionary = new HashMap<>();
 
-        for (char letter : textForCrypto.toCharArray()) {
-            for (String key : cryptoDictionary.keySet()) {
-                if (letter == key.charAt(0)) {
-                    System.out.print(cryptoDictionary.get(key));
-                    System.out.print(" ");
-                }
-            }
+        String[] namelyText = new String[]{inputText.getText()};
+
+        dictionary.put("Привет!","aPhrase");
+        dictionary.put("Как твои дела?","bPhrase");
+        dictionary.put("Хорошо!","cPhrase");
+        dictionary.put("Двигаемся вперёд!","dPhrase");
+        dictionary.put("Делаем проект!","ePhrase");
+
+        dictionary.put("aPhrase","Привет!");
+        dictionary.put("bPhrase","Как твои дела?");
+        dictionary.put("cPhrase","Хорошо!");
+        dictionary.put("dPhrase","Двигаемся вперёд!");
+        dictionary.put("ePhrase","Делаем проект!");
+
+
+        for (int i = 0; i < namelyText.length; i++) {
+            namelyText[i] = dictionary.get(namelyText[i]);
+            System.out.println(namelyText[i]);
+            outputText.setText(namelyText[i]);
         }
     }
 }
