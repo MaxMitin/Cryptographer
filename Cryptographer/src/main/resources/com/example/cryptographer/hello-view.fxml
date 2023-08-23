@@ -8,6 +8,6 @@
    <children>
       <TextField fx:id="inputText" layoutX="55.0" layoutY="53.0" prefHeight="103.0" prefWidth="735.0" promptText="Введите текст для шифрования" AnchorPane.leftAnchor="55.0" AnchorPane.rightAnchor="53.0" AnchorPane.topAnchor="53.0" />
       <TextField fx:id="outputText" layoutX="54.0" layoutY="292.0" prefHeight="111.0" prefWidth="735.0" promptText="Вывод зашифрованного текста" AnchorPane.bottomAnchor="69.0" AnchorPane.leftAnchor="54.0" AnchorPane.rightAnchor="54.0" />
-      <Button fx:id="btn" layoutX="264.0" layoutY="198.0" mnemonicParsing="false" onAction="#encodeText" prefHeight="93.0" prefWidth="301.0" text="Зашифровать текст" />
+      <Button fx:id="btn" layoutX="264.0" layoutY="198.0" mnemonicParsing="false" onAction="#encodeText" prefHeight="93.0" prefWidth="301.0" text="Зашифровать / дешифровать текст" />
    </children>
 </AnchorPane>
